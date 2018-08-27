@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+class User extends Authenticatable
 {
     protected $table = 'users';
-    protected $fillable = ['name', 'email', 'password', 'password_confirmation'];
+    protected $fillable = ['email', 'name',  'password', 'password_confirmation'];
 
     public function gravatar($size = '100')
     {
